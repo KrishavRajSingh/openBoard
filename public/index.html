@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAACgUAAKP3/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAERERERERERERERERERERERAAERERERERARABERERERAAAREREREQAAAREREREREAARERERERERABEREREREREAEREREREREQASIhIiISIhABIiEiIhIiEAEREREREREQAQERERERERABABEREREREAAQAREREREAAAEREREREAAAAAAAAAAAAHAAAACYAQAA4AcAAMADAACAAQAAgAEAAIABAACAAQAAgAEAAIABAACgAQAAsAEAANgDAADgBwAA" rel="icon" type="image/x-icon" />
+    <title>OpenBoard</title>
+</head>
+<body>
+    <div class="options-cont">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+    <div class="tools-cont scale-tools">
+        <img class="pencil" src="./pencil-svgrepo-com.svg" alt="">
+        <img class="eraser" src="./eraser-4-svgrepo-com.svg" alt="">
+        <img class="download" src="./download-svgrepo-com.svg" alt="">
+        <img class="upload" src="./upload-svgrepo-com.svg" alt="">
+        <img class="sticky" src="./notes-note-svgrepo-com.svg" alt="">
+        <img class="undo" src="./undo-svgrepo-com (1).svg" alt="">
+        <img class="redo" src="./undo-svgrepo-com.svg" alt="">
+    </div>
+    <div class="pencil-tool-cont">
+        <div class="pencil-width-cont">
+            <input class="pencil-width" type="range" min="2" max="10" value="1">
+        </div>
+        <div class="pencil-color-cont">
+            <div class="black pencil-color"></div>
+            <div class="blue pencil-color"></div>
+            <div class="red pencil-color"></div>
+            <div class="green pencil-color"></div>
+            <div class="yellow pencil-color"></div>
+            <!-- <input type="color" class="pencil-color"> -->
+            
+        </div>
+    </div>
+    <div class="eraser-tool-cont">
+        <input class="eraser-width" type="range" min="1">
+    </div>
+
+    <canvas></canvas>
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+    <script>
+        let socket = io.connect("http://localhost:5000")
+    </script>    
+    <script src="./tools.js"></script>
+    <script src="./canvas.js"></script>
+</body>
+</html>

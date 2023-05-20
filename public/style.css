@@ -1,0 +1,217 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+.options-cont{
+    height: 4rem;
+    width: 4rem;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    background-color: #f1f2f6;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.scale-tools{
+    animation-name: scale-tools;
+    animation-duration: 1s;
+}
+@keyframes scale-tools{
+    0%{
+        transform: scale(0.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+.tools-cont{
+    display: flex;
+    height: 5rem;
+    width: 65vw;
+    /* background-color: aqua; */
+    justify-content: space-around;
+    position:absolute;
+    top: 2rem;
+    left: calc((100vw - 65vw)/2);
+    background-color: #f1f2f6;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
+}
+
+.tools-cont>*{
+    display: block;
+    /* width: 4rem; */
+    /* border: 5px solid black; */
+    width: calc(65vw / 11);
+}
+.tools-cont>*:hover{
+    background-color: #dcdde1;
+}
+.pencil-tool-cont{
+    background-color: #f1f2f6;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 6.5rem;
+    width: calc(65vw / 7);
+    border-radius: 3px;
+    height: 5rem;
+    position: absolute;
+    left: calc((100vw - 65vw)/2);
+    top: 7rem;
+    display: none;
+}
+.pencil-width-cont{
+    
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pencil-width-cont input{
+    width: 85%;
+}
+.pencil-color-cont{
+    
+    height: calc(100% - 2rem);
+    /* height: 4rem; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.pencil-color{
+    height: 1.4rem;
+    width: 1rem;
+    border-radius: 50%;
+    /* display: flex;
+    flex-wrap: wrap; */
+}
+.black{
+    background-color: black;
+}
+.blue{
+    background-color: blue;
+}
+.red{
+    background-color: red;
+}
+.green{
+    background-color: green;
+}
+.yellow{
+    background-color: yellow;
+}
+.eraser-tool-cont{
+    background-color: #f1f2f6;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 7rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 7rem;
+    left: calc((100vw - 65vw)/2 + 65vw / 7);
+    display: none;
+}
+.eraser-tool-cont input{
+    width: 80%;
+
+}
+.sticky-cont{
+    height: 15rem;
+    width: 15rem;
+    
+    position: absolute;
+    top: calc((100vh - 15rem)/2);
+    left: calc((100vw - 15rem)/2);
+    
+}
+.header-cont{
+    height: 2rem;
+    background-color: #f1f2f6;
+    
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    /* z-index: 10; */
+}
+.header-cont>*{
+    height: 1.7rem;
+    width: 1.7rem;
+    margin-right: 0.5rem;
+    border-radius: 50%;
+    /* font-size: 1rem !important; */
+    display: flex;
+    justify-content: center;
+    /* background-color: yellow; */
+    
+}
+.minimize{
+    background-color: #44bd32;
+    /* z-index: 100; */
+}
+.remove{
+    background-color: #EA2027;
+    align-items: center;
+   
+}
+.note-cont{
+    height: calc(100% - 2rem);   
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+textarea{
+    height: 100%;
+    width: 100%;
+    border: none;
+    resize: none;
+    outline: none;
+}
+img{
+    height: 100%;
+    width: 100%;
+}
+/* canvas{
+    height: fit-content;
+    width: fit-content;
+    background-color: #44bd32;
+} */
+@media screen and (max-width: 600px) {
+    .options-cont{
+        left: 1rem;
+        height: 2rem;
+        width: 2rem;
+    }
+    .tools-cont{
+        position: absolute;
+        /* right: none; */
+        /* background-color: #EA2027; */
+        height: 2rem;
+        width: 55vw;
+        left: calc((100vw - 50vw)/2);
+    }
+    .pencil-tool-cont{
+        top: 4rem;
+        /* left: 1rem; */
+        width: 5rem;
+        height: 4rem;
+    }
+    .eraser-tool-cont{
+        top: 4rem;
+        left: calc((100vw - 65vw)/2 + 5rem);
+    }
+    .pencil-color-cont{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .pencil-color{
+        height: 1rem;
+        width: 0.7rem;
+    }
+}
